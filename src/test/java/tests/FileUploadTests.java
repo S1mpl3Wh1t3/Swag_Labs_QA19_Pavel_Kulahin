@@ -20,7 +20,7 @@ public class FileUploadTests extends BaseTests {
     public void FileUploadTests() {
 
         WebElement selectFileButton = driver.findElement(By.id("file-upload"));
-        selectFileButton.sendKeys("C:\\Users\\nik_c\\OneDrive\\Рабочий стол\\TestFile.txt");
+        selectFileButton.sendKeys(System.getProperty("user.dir")+"/src/test/java/Resources/TestFile.txt");
         WebElement uploadFileButton = driver.findElement(By.id("file-submit"));
         uploadFileButton.click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
