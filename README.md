@@ -1,0 +1,10 @@
+ 1. check the opening and availability of the site;
+ 2. check that all items in the menu work;
+ 3. check that the buttons on the site are pressed;
+ 4. check that all links open;
+ 5. fill and check all forms on the site;
+ 6. check the functionality of the main elements of the site;
+ 7. Check if it is possible to fill in all fields of the form;
+ 8. check if there are buttons "Order", "Buy", "Add to cart" in the product card;
+ 9. check the possibility of putting the product in the basket;
+ 10. check the operation of filters for goods;
