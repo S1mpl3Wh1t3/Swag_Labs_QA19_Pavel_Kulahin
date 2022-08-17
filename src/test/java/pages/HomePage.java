@@ -14,8 +14,7 @@ public class HomePage extends BasePage {
     private final By linkedInLink = By.xpath("//a[text()='LinkedIn']");
     private final By closeMenuButton = By.id("react-burger-cross-btn");
     private final By logoutButton = By.id("logout_sidebar_link");
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-
+    WebDriverWait wait = new WebDriverWait(driver, 20);
 
     public HomePage(WebDriver driver) {
         super(driver);
