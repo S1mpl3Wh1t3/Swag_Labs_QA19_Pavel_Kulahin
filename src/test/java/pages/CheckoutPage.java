@@ -30,6 +30,7 @@ public class CheckoutPage extends HomePage {
     public void setLastNameInput(String lastName) {
         driver.findElement(lastNameInput).sendKeys(lastName);
     }
+
     public void setZipPostalCodeInput(String zipPostalCode) {
         driver.findElement(zipPostalCodeInput).sendKeys(zipPostalCode);
     }
@@ -40,10 +41,12 @@ public class CheckoutPage extends HomePage {
         setZipPostalCodeInput(zipPostalCode);
         clickContinueButton();
     }
+
     public boolean isErrorMessageDisplayed() {
         return driver.findElement(errorMessages).isDisplayed();
     }
-    public String  getErrorMessageText() {
+
+    public String getErrorMessageText() {
 
         return driver.findElement(errorMessages).getText();
     }

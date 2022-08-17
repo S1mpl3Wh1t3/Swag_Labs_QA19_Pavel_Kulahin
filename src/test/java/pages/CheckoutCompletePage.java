@@ -19,6 +19,7 @@ public class CheckoutCompletePage extends HomePage {
     public String getCheckoutComplete() {
         return driver.findElement(checkoutComplete).getText();
     }
+
     public boolean isBackHomeButtonDisplayed() {
         return driver.findElement(backHomeButton).isDisplayed();
     }

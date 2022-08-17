@@ -15,6 +15,15 @@ public class BaseTests {
     protected WebDriver driver;
     protected LoginPage loginPage;
     protected ProductsPage productsPage;
+    protected final String USERNAME = "standard_user";
+    protected final String PASSWORD = "secret_sauce";
+    protected String FIRST_NAME = "First";
+    protected String LAST_NAME = "Last";
+    protected String ZIP_POSTAL_CODE = "12345";
+    protected String EMPTY = "";
+    protected String PRODUCT_NAME = "Sauce Labs Bolt T-Shirt";
+    protected String ITEM_DESCRIPTION = "Get your testing superhero on with the Sauce Labs bolt T-shirt. " +
+            "From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.";
 
     @BeforeClass
     public void setUp() {
@@ -30,8 +39,6 @@ public class BaseTests {
     public void navigate() {
         driver.get("https://www.saucedemo.com/");
     }
-
-
 
 
     @AfterClass

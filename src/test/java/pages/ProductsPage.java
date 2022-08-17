@@ -4,7 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class ProductsPage extends HomePage{
+import java.util.List;
+import java.util.Set;
+
+public class ProductsPage extends HomePage {
     String productContainerLocator
             = "//div[@class = 'inventory_item_name' and text() = '%s']/ancestor::div[@class='inventory_item']";
     private final By addToCartButton = By.cssSelector("button[id^=add-to-cart]");
@@ -18,17 +21,21 @@ public class ProductsPage extends HomePage{
     public ProductsPage(WebDriver driver) {
         super(driver);
     }
+
     public boolean isProductSortContainerDisplayed() {
         return driver.findElement(productSortContainer).isDisplayed();
     }
-    private WebElement getProductContainerByName(String productsName){
+
+    private WebElement getProductContainerByName(String productsName) {
         return driver.findElement(By.xpath
                 (String.format(productContainerLocator, productsName)));
     }
+
     public void clickAddToCartButton(String productsName) {
         WebElement productContainer = getProductContainerByName(productsName);
         productContainer.findElement(addToCartButton).click();
     }
+
     public String getProductPrice(String productsName) {
         WebElement productContainer = getProductContainerByName(productsName);
         return productContainer.findElement(productPrice).getText();
@@ -39,13 +46,24 @@ public class ProductsPage extends HomePage{
         productContainer.findElement(productLink).click();
 
     }
+
     public String getProductName(String productsName) {
         WebElement productContainer = getProductContainerByName(productsName);
         return productContainer.findElement(productName).getText();
     }
+
     public String getProductDescription(String productsName) {
         WebElement productContainer = getProductContainerByName(productsName);
         return productContainer.findElement(productDescription).getText();
+    }
+    public String getTwitterUrl() {
+        Set<String> allWindows = driver.getWindowHandles();
+        List<String> allWindowsList = allWindows.stream().toList();
+        driver.switchTo().window(allWindowsList.get(1));
+        String twitterUrl = driver.getCurrentUrl();
+        driver.close();
+        driver.switchTo().window(allWindowsList.get(0));
+        return twitterUrl;
     }
 
 }

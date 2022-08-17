@@ -3,7 +3,7 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ProductsTests extends BaseTests{
+public class ProductsTests extends BaseTests {
     final static String PRODUCT_NAME = "Sauce Labs Backpack";
 
     @Test
@@ -21,6 +21,7 @@ public class ProductsTests extends BaseTests{
                 "Checking the product name");
 
     }
+
     @Test
     public void verifyItemDescriptionOnProductsPage() {
         loginPage.login("standard_user", "secret_sauce");
